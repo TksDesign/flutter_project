@@ -1,0 +1,32 @@
+iname: flutter_application_5
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_staggered_grid_view: ^0.6.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  
+  
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/1.png
+    - assets/images/2.png
+    - assets/images/3.png
+    - assets/images/4.png
+    - assets/images/5.jpeg
+    - assets/images/6.jpeg
+    - assets/images/7.jpeg
+    - assets/images/8.jpeg
