@@ -1,8 +1,6 @@
-import 'package:favoriteplace/main.dart';
 import 'package:favoriteplace/model/place.dart';
 import 'package:favoriteplace/screens/place_detail.dart';
 import 'package:flutter/material.dart';
-import 'package:favoriteplace/screens/place_detail.dart';
 
 class PlaceList extends StatelessWidget {
   const PlaceList({super.key, required this.places});
@@ -32,6 +30,13 @@ class PlaceList extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .titleMedium!
+              .copyWith(color: Theme.of(context).colorScheme.onPrimary),
+        ),
+        subtitle: Text(
+          places[index].location.adress,
+          style: Theme.of(context)
+              .textTheme
+              .bodySmall!
               .copyWith(color: Theme.of(context).colorScheme.onPrimary),
         ),
         onTap: () {
