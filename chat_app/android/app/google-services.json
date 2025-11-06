@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "739721869191",
+    "firebase_url": "https://testprojet-acf85-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "testprojet-acf85",
+    "storage_bucket": "testprojet-acf85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739721869191:android:2bcf97278e65937c538522",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYurXe_VcdorN49ATiZWzPLJcTJdRLH_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739721869191:android:00ad65ac6ea4285f538522",
+        "android_client_info": {
+          "package_name": "com.example.testprojet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYurXe_VcdorN49ATiZWzPLJcTJdRLH_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

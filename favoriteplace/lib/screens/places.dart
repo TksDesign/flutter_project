@@ -3,12 +3,31 @@ import 'package:favoriteplace/screens/add_place.dart';
 import 'package:favoriteplace/widgets/place_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sqflite/sqflite.dart' as sql;
+import 'package:path/path.dart' as path;
 
-class PlaceScreen extends ConsumerWidget {
+class PlaceScreen extends ConsumerStatefulWidget {
   const PlaceScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() {
+    return _PlaceScreenState();
+  }
+}
+
+class _PlaceScreenState extends ConsumerState<PlaceScreen> {
+  // le future qu'on va atacher au Future builder
+  late Future<void> _placeFutrure;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _placeFutrure = ref.read(userPlaceProvider.notifier).loadPlaces();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final userPlaces = ref.watch(userPlaceProvider);
 
     return Scaffold(
@@ -32,7 +51,14 @@ class PlaceScreen extends ConsumerWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: PlaceList(places: userPlaces),
+        child: FutureBuilder(
+            future: _placeFutrure,
+            builder: (context, snapshot) =>
+                snapshot.connectionState == ConnectionState.waiting
+                    ? const Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : PlaceList(places: userPlaces)),
       ),
     );
   }

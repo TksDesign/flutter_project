@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app2/quiz.dart';
 
 class StartScrem extends StatefulWidget {
   const StartScrem(this.startQuiz, this.colors1, this.colors2, this.colors3,

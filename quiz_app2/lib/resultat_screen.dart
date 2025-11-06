@@ -121,150 +121,143 @@ class _ResultatScreenState extends State<ResultatScreen>
       }
     };
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Stack(children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: colorP,
-                    borderRadius: BorderRadius.circular(30),
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Stack(children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: colorP,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    height: 350,
+                    width: double.infinity,
+                    child: Stack(children: [
+                      alignWidget(x: -2, y: -1, h: 200, w: 200),
+                      alignWidget(x: 0, y: -1.5, h: 120, w: 120),
+                      alignWidget(x: 0.5, y: -0.7, h: 70, w: 70),
+                      alignWidget(x: 2, y: 0.5, h: 200, w: 200),
+                      Align(
+                        alignment: Alignment(0, 3.2),
+                        child: Container(
+                          height: 250,
+                          width: 400,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                            boxShadow: [
+                              BoxShadow(
+                                color: colorP.withOpacity(0.3),
+                                spreadRadius: 4,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 4), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Stack(
+                            children: [
+                              Align(
+                                alignment: Alignment(0, -1.8),
+                                child: Container(
+                                  height: 120,
+                                  width: 120,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(200),
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment(0, -0.1),
+                                    child: Text(
+                                      '$note20',
+                                      style: TextStyle(
+                                          fontSize: 22,
+                                          color: colorS,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment(0, -1.6),
+                                child: Container(
+                                  height: 100,
+                                  width: 100,
+                                  decoration:
+                                      BoxDecoration(color: Colors.transparent),
+                                  child: AnimatedBuilder(
+                                      animation: _controller,
+                                      builder: (context, child) {
+                                        return CircularProgressIndicator(
+                                          value: _progressAnimation.value,
+                                          strokeWidth: 9,
+                                          color: colorS,
+                                          backgroundColor: const Color.fromARGB(
+                                              255, 237, 229, 247),
+                                        );
+                                      }),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    top: 80, left: 30, right: 30),
+                                child: Container(
+                                  child: Center(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        centerWidget(
+                                            resultgroup:
+                                                mapValues["leftValues"]!),
+                                        centerWidget(
+                                            resultgroup:
+                                                mapValues["rightValue"]!),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                    ]),
                   ),
-                  height: 350,
-                  width: double.infinity,
-                  child: Stack(children: [
-                    alignWidget(x: -2, y: -1, h: 200, w: 200),
-                    alignWidget(x: 0, y: -1.5, h: 120, w: 120),
-                    alignWidget(x: 0.5, y: -0.7, h: 70, w: 70),
-                    alignWidget(x: 2, y: 0.5, h: 200, w: 200),
-                    Align(
-                      alignment: Alignment(0, 3.2),
-                      child: Container(
-                        height: 250,
-                        width: 400,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                          boxShadow: [
-                            BoxShadow(
-                              color: colorP.withOpacity(0.3),
-                              spreadRadius: 4,
-                              blurRadius: 10,
-                              offset: const Offset(
-                                  0, 4), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Stack(
-                          children: [
-                            Align(
-                              alignment: Alignment(0, -1.8),
-                              child: Container(
-                                height: 120,
-                                width: 120,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(200),
-                                ),
-                                child: Align(
-                                  alignment: Alignment(0, -0.1),
-                                  child: Text(
-                                    '$note20',
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        color: colorS,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment(0, -1.6),
-                              child: Container(
-                                height: 100,
-                                width: 100,
-                                decoration:
-                                    BoxDecoration(color: Colors.transparent),
-                                child: AnimatedBuilder(
-                                    animation: _controller,
-                                    builder: (context, child) {
-                                      return CircularProgressIndicator(
-                                        value: _progressAnimation.value,
-                                        strokeWidth: 9,
-                                        color: colorS,
-                                        backgroundColor: const Color.fromARGB(
-                                            255, 237, 229, 247),
-                                      );
-                                    }),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsets.only(top: 80, left: 30, right: 30),
-                              child: Container(
-                                child: Center(
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      centerWidget(
-                                          resultgroup:
-                                              mapValues["leftValues"]!),
-                                      centerWidget(
-                                          resultgroup:
-                                              mapValues["rightValue"]!),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  ]),
+                ]),
+                SizedBox(
+                  height: 130,
                 ),
-              ]),
-              SizedBox(
-                height: 130,
-              ),
-              AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return Transform.translate(
-                      offset: Offset(_progressAnimation2.value, 0),
-                      child: Container(
-                        height: 320,
-                        width: double.infinity,
-                        child: QuestionSummary(summaryData),
-                      ),
-                    );
-                  }),
-              Container(
-                child: OutlinedButton(
-                    onPressed: () {
-                      widget.onRestart();
-                    },
-                    child: Text('restart quiz')),
-              )
-            ],
+                AnimatedBuilder(
+                    animation: _controller,
+                    builder: (context, child) {
+                      return Transform.translate(
+                        offset: Offset(_progressAnimation2.value, 0),
+                        child: Container(
+                          height: 320,
+                          width: double.infinity,
+                          child: QuestionSummary(summaryData),
+                        ),
+                      );
+                    }),
+                Container(
+                  child: OutlinedButton(
+                      onPressed: () {
+                        widget.onRestart();
+                      },
+                      child: Text('restart quiz')),
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
   }
-
-
-
-
-
-
-
-
-
 
   Center centerWidget({
     required final Map<String, Map<String, Object>> resultgroup,
