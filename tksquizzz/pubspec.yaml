@@ -1,0 +1,31 @@
+name: tksquizzz
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.1.11
+  flutter_riverpod: ^2.6.1
+  freezed: ^3.0.0-0.0.dev
+  google_fonts: ^6.3.0
+  supabase_flutter: ^1.10.0
+  flutter_dotenv: ^6.0.0 
+  riverpod: ^2.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  json_serializable: ^6.9.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.png
+    - assets/images/forgotpassword.png
+    - assets/images/newpass.png
